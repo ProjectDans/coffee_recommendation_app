@@ -170,7 +170,12 @@ class item_toko extends StatelessWidget {
                     gambar,
                     fit: BoxFit.cover,
                   ),
-                )
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/Detailpage');
+                    },
+                    child: Text("Detail"))
               ],
             ),
           ),

@@ -2,6 +2,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
@@ -17,6 +18,7 @@ class _DetailPageState extends State<DetailPage> {
     double width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: HexColor("#C19F77"),
       body: SingleChildScrollView(
         child: SafeArea(
             child: Column(
@@ -63,7 +65,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text(
-                      "Toko Maman Roti",
+                      "Kopi Kenangan",
                       style: GoogleFonts.poppins(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
@@ -71,7 +73,7 @@ class _DetailPageState extends State<DetailPage> {
                   height: height * 0.07,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: HexColor("#C19F77"),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(20),
                           topRight: Radius.circular(20))),
@@ -79,81 +81,127 @@ class _DetailPageState extends State<DetailPage> {
               ],
             ),
             Padding(
-              padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.only(
+                    left: 16, top: 10, bottom: 15, right: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Info Umum",
+                      style: GoogleFonts.poppins(
+                          fontSize: 14, fontWeight: FontWeight.bold),
+                    ),
+                    Container(
+                      width: 75,
+                      height: 24,
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.brown),
+                          onPressed: () {},
+                          child: Text(
+                            "4.5",
+                            style: GoogleFonts.poppins(fontSize: 12),
+                          )),
+                    )
+                  ],
+                )),
+            //ALAMAT
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 10),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.amberAccent,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "4.6 (32 Reviews)",
-                        style: GoogleFonts.poppins(fontSize: 12),
-                      )
-                    ],
+                  Icon(Icons.location_on),
+                  SizedBox(
+                    width: 7,
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.access_time,
-                        color: Colors.grey,
-                      ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Text(
-                        "10.00 - 21.00 WIB",
-                        style: GoogleFonts.poppins(fontSize: 12),
-                      )
-                    ],
-                  )
+                  Text(
+                    "Jl. DR. Cipto Mangunkusumo",
+                    style: GoogleFonts.poppins(fontSize: 12),
+                  ),
                 ],
               ),
             ),
-            //Card Promo
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: Colors.amber[100],
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "Ada promo untuk kamu",
-                            style: GoogleFonts.poppins(fontSize: 12),
-                          ),
-                          Text(
-                            "Dapatkan diskon 100 ribu",
-                            style: GoogleFonts.poppins(fontSize: 11),
-                          )
-                        ],
-                      ),
-                      ElevatedButton(onPressed: () {}, child: Text("Tukar"))
-                    ],
+              padding: const EdgeInsets.only(left: 16, top: 10),
+              child: Row(
+                children: [
+                  Icon(Icons.access_time),
+                  SizedBox(
+                    width: 7,
                   ),
-                ),
+                  Text(
+                    "13.00 - 23.00",
+                    style: GoogleFonts.poppins(fontSize: 12),
+                  ),
+                ],
               ),
             ),
-            //ALAMAT
-            TitleDetail(
-              title: "Alamat",
-              detail:
-                  "Jl. Raya Cipto Mangunkusumo No. 69 \n Kota Cirebon, Jawa Barat",
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 10),
+              child: Row(
+                children: [
+                  Icon(Icons.menu_book_sharp),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Text(
+                    "Harga Menu Murah dan Terjangkau",
+                    style: GoogleFonts.poppins(fontSize: 12),
+                  ),
+                ],
+              ),
             ),
-            TitleDetail(
-              title: "Deskripsi",
-              detail:
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 10),
+              child: Row(
+                children: [
+                  Icon(Icons.width_wide_sharp),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Text(
+                    "Tempat yang luas dan nyaman",
+                    style: GoogleFonts.poppins(fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 10),
+              child: Row(
+                children: [
+                  Icon(Icons.wifi),
+                  SizedBox(
+                    width: 7,
+                  ),
+                  Text(
+                    "Free Wifi",
+                    style: GoogleFonts.poppins(fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Container(
+                width: double.infinity,
+                child: ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.brown),
+                    onPressed: () {},
+                    child: Text("Lihat Menu")),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 0),
+              child: Container(
+                width: double.infinity,
+                child: ElevatedButton(
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.brown),
+                    onPressed: () {},
+                    child: Text("Lihat Peta Lokasi")),
+              ),
             ),
 
             //TITLE ULASAN ATAU COMMENT
@@ -213,26 +261,6 @@ class Comment extends StatelessWidget {
                     "Mimin Racing",
                     style: GoogleFonts.poppins(fontSize: 12),
                   ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: Colors.amberAccent,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.amberAccent,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.amberAccent,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: Colors.amberAccent,
-                      )
-                    ],
-                  )
                 ],
               )
             ],
